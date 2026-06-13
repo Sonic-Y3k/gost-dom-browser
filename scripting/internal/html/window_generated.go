@@ -91,14 +91,6 @@ func Window_document[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err e
 	return codec.EncodeEntity(cbCtx, result)
 }
 
-func Window_name[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
-	return codec.EncodeCallbackErrorf(cbCtx, "Window.Window_name: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
-}
-
-func Window_setName[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
-	return codec.EncodeCallbackErrorf(cbCtx, "Window.Window_setName: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
-}
-
 func Window_location[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
 	instance, err := js.As[html.Window](cbCtx.Instance())
 	if err != nil {

@@ -54,6 +54,13 @@ func (s *WindowTestSuite) TestConstructorName() {
 	s.Expect(s.Eval("window.constructor.name")).To(Equal("Window"))
 }
 
+func (s *WindowTestSuite) TestName() {
+	s.Expect(s.Eval("window.name")).To(Equal(""), "name defaults to the empty string")
+	s.Expect(s.Eval("typeof window.name")).To(Equal("string"))
+	s.MustRunScript(`window.name = "my-window"`)
+	s.Expect(s.Eval("window.name")).To(Equal("my-window"), "name round-trips an assignment")
+}
+
 func NewWindowTestSuite(h html.ScriptEngine) *WindowTestSuite {
 	return &WindowTestSuite{ScriptHostSuite: *NewScriptHostSuite(h)}
 }
