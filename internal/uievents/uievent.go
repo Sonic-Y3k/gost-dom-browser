@@ -5,7 +5,8 @@ import "github.com/gost-dom/browser/dom/event"
 type UIEvent = *event.Event
 
 type UIEventInit struct {
-	view event.EventTarget
+	view   event.EventTarget
+	Detail int
 }
 
 type MouseEventInit struct {

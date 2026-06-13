@@ -47,14 +47,6 @@ func MouseEvent_getModifierState[T any](cbCtx js.CallbackContext[T]) (res js.Val
 	return codec.EncodeCallbackErrorf(cbCtx, "MouseEvent.MouseEvent_getModifierState: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
 }
 
-func MouseEvent_screenX[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
-	return codec.EncodeCallbackErrorf(cbCtx, "MouseEvent.MouseEvent_screenX: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
-}
-
-func MouseEvent_screenY[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
-	return codec.EncodeCallbackErrorf(cbCtx, "MouseEvent.MouseEvent_screenY: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
-}
-
 func MouseEvent_clientX[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
 	return codec.EncodeCallbackErrorf(cbCtx, "MouseEvent.MouseEvent_clientX: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
 }

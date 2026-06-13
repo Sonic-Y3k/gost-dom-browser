@@ -40,7 +40,3 @@ func UIEventConstructor[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], er
 func UIEvent_view[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
 	return codec.EncodeCallbackErrorf(cbCtx, "UIEvent.UIEvent_view: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
 }
-
-func UIEvent_detail[T any](cbCtx js.CallbackContext[T]) (res js.Value[T], err error) {
-	return codec.EncodeCallbackErrorf(cbCtx, "UIEvent.UIEvent_detail: Not implemented. Create an issue: https://github.com/gost-dom/browser/issues")
-}

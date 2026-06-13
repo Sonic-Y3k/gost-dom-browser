@@ -64,4 +64,27 @@ func RunUieventsSuite(t *testing.T, e html.ScriptEngine) {
 			gost.assertEqual(event.key, "k")
 		`)
 	})
+
+	t.Run("UIEvent detail", func(t *testing.T) {
+		w := browsertest.InitWindow(t, e)
+		w.MustRun(`
+			const event = new UIEvent("dummy", { detail: 3 })
+			gost.assertEqual(event.detail, 3)
+		`)
+		w.MustRun(`gost.assertEqual(new UIEvent("dummy").detail, 0)`)
+	})
+
+	t.Run("MouseEvent screen coordinates", func(t *testing.T) {
+		w := browsertest.InitWindow(t, e)
+		w.MustRun(`
+			const event = new MouseEvent("dummy", { screenX: 12, screenY: 34 })
+			gost.assertEqual(event.screenX, 12)
+			gost.assertEqual(event.screenY, 34)
+		`)
+		w.MustRun(`
+			const dflt = new MouseEvent("dummy")
+			gost.assertEqual(dflt.screenX, 0)
+			gost.assertEqual(dflt.screenY, 0)
+		`)
+	})
 }
